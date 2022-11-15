@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::post('/login_repo', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name("login_repo");
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
